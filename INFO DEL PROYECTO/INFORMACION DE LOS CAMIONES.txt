@@ -1,4 +1,4 @@
-3. Tabla comparativa (capacidad y costos aproximados)
+Tabla comparativa (capacidad y costos aproximados)
 
 Valores aproximados en México — te sirven para planeación.
 
@@ -17,13 +17,3 @@ Pipa	                Variable	              Líquidos       	$35 – $50
 Chassis	                Depende del contenedor	  Import/Export  	$40 – $48
 
 
-
-GUARDAR EN GITHUB 
-
-FLASK 
-
-INDEX
-
-CSS
-
-JS 
