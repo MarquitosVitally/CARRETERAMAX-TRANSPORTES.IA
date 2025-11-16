@@ -1,0 +1,29 @@
+3. Tabla comparativa (capacidad y costos aproximados)
+
+Valores aproximados en México — te sirven para planeación.
+
+Tipo de camión        	Capacidad	              Mejor uso	        Costo por km aprox
+3 ½ t	                1.5–3.5 t	              Reparto urbano	$20 – $28
+5 t	                    5 t	                      Regional	        $25 – $32
+Rabón	                6–9 t	                  Regional/Nacional	$30 – $36
+Torton	                8–12 t	                  Nacional	        $35 – $42
+Plataforma	            8–25 t                    Maquinaria	    $40 – $50
+Caja seca 53’	        20–28 t	                  Nacional	        $38 – $45
+Reefer	                20–25 t	                  Alimentos	        $45 – $60
+Full doble	            40–54 t	                  Nacional largo	$50 – $65
+Lowboy	                25–45 t	                  Carga pesada   	$60 – $85
+Góndola	                10–25 t	                  Materiales	    $30 – $38
+Pipa	                Variable	              Líquidos       	$35 – $50
+Chassis	                Depende del contenedor	  Import/Export  	$40 – $48
+
+
+
+GUARDAR EN GITHUB 
+
+FLASK 
+
+INDEX
+
+CSS
+
+JS 

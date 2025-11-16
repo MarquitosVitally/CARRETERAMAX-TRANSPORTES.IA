@@ -1,0 +1,201 @@
+✅ 1. Requisitos Técnicos (lo que debes instalar y preparar)
+a) Python 3.10 o superior
+
+Con librerías de Machine Learning:
+
+pandas
+
+numpy
+
+scikit-learn
+
+matplotlib o seaborn
+
+nltk o spaCy (para texto)
+
+tensorflow o pytorch (si usarás redes neuronales)
+
+xgboost (muy recomendado)
+
+b) Un entorno de desarrollo
+
+Visual Studio Code (recomendado)
+
+Jupyter Notebook o Google Colab (para pruebas)
+
+c) Un ambiente virtual (opcional pero recomendado)
+python -m venv env
+source env/bin/activate   # mac/Linux
+env\Scripts\activate      # Windows
+
+d) Herramienta para probar la API (si integras el modelo)
+
+Postman
+
+Thunder Client en VS Code
+
+✅ 2. Requisitos de Datos (lo más importante del proyecto)
+
+Para crear un modelo predictivo necesitas historial de incidencias.
+Con estas columnas ya puedes iniciar:
+
+a) Datos estructurados
+Campo	Descripción
+Issue ID	Identificador único
+Summary	Resumen corto
+Description	Texto detallado
+Priority	Baja, media, alta…
+Issue Type	Bug, task, story…
+Status	To Do / In Progress / Done
+Assignee	Usuario asignado
+Created Date	Fecha creación
+Resolved Date	Fecha cierre
+Labels	Etiquetas
+Comentarios	Texto adicional
+b) Variable objetivo (label)
+
+Aquí tú decides qué quieres predecir.
+Ejemplos:
+
+Si la incidencia se resolverá rápido (sí/no)
+
+Si escalará a nivel crítico
+
+La prioridad futura
+
+El estado futuro
+
+Tiempo estimado de resolución
+
+👉 Esto lo defines tú, pero es obligatorio.
+
+✅ 3. Habilidades necesarias (aunque sean básicas)
+
+No necesitas ser experto, pero sí tener:
+
+a) Fundamentos de Python
+
+Manejo de listas y diccionarios
+
+Funciones
+
+Lectura de archivos CSV
+
+POO (opcional)
+
+b) Análisis de datos
+
+pandas para limpiar datos
+
+Gráficas básicas
+
+c) Machine Learning básico
+
+Clasificación binaria
+
+Entrenamiento / validación / prueba
+
+Métricas (Accuracy, F1, etc.)
+
+d) NLP (opcional pero útil)
+
+Preprocesar texto
+
+TF-IDF o embeddings
+
+e) Uso de APIs (solo si integras Jira o haces una app)
+
+Flask / FastAPI
+
+HTTP Requests
+
+No necesitas dominar todo al 100%.
+Lo vas a aprender sobre la marcha.
+
+✅ 4. Herramientas recomendadas
+Para manipular datos
+
+Python + Pandas
+
+Para entrenar modelos
+
+Scikit-learn (modelos tradicionales)
+
+TensorFlow o PyTorch (redes neuronales)
+
+XGBoost (muy poderoso)
+
+Para texto
+
+SpaCy
+
+NLTK
+
+HuggingFace Transformers (avanzado)
+
+Para Jira
+
+La API oficial de Jira
+(si obtener datos automáticamente)
+
+Para documentación
+
+Word, Google Docs o LaTeX
+
+Diagramas con Draw.io o Canva
+
+✅ 5. Entregables finales del proyecto (lo que te van a pedir)
+
+Tu proyecto debe generar:
+
+1. Dataset limpio
+
+CSV con datos listos para usar.
+
+2. Notebook o script de entrenamiento
+
+Con:
+
+Preprocesamiento
+
+Entrenamiento
+
+Resultados
+
+3. Gráficas
+
+Matriz de confusión
+
+Curva ROC
+
+Importancia de variables
+
+4. Documento técnico
+
+Con:
+
+Problema
+
+Objetivo
+
+Datos
+
+Modelo
+
+Resultados
+
+Conclusión
+
+5. Modelo final guardado
+
+Ejemplo:
+
+modelo.pkl
+vectorizador.pkl
+
+
+(O formato .h5 si es red neuronal)
+
+6. (Opcional) API en Flask
+
+Para hacer predicciones desde una interfaz externa.

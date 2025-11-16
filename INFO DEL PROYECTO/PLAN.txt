@@ -1,0 +1,192 @@
+✅ 1. Entender claramente qué vas a predecir (lo primero y más importante)
+
+Antes de hacer cualquier modelo, necesitas definir:
+
+¿Qué variable quieres predecir?
+
+Algunas opciones comunes para incidencias de Jira:
+
+Tiempo de resolución (rápida / normal / lenta)
+
+Probabilidad de que escale (sí / no)
+
+Prioridad futura (alta / media / baja)
+
+Si se cerrará en los próximos X días
+
+Estado futuro (To Do, In Progress, Done, Blocked…)
+
+📌 Elige solo UNA para este proyecto.
+Ejemplo recomendado para un proyecto académico:
+👉 Predecir si una incidencia se resolverá en menos de 7 días (sí/no)
+
+✅ 2. Obtener los datos
+
+Necesitarás un dataset histórico de incidencias Jira.
+Las columnas útiles suelen ser:
+
+Campos estructurados
+
+Fecha de creación
+
+Fecha de resolución
+
+Prioridad
+
+Tipo (bug, task, incident, improvement…)
+
+Asignado a
+
+Estado actual
+
+Etiquetas
+
+Campos de texto
+
+Descripción
+
+Resumen ("summary")
+
+Comentarios
+
+📌 Si no tienes datos reales, puedes:
+
+Exportar de un Jira local
+
+Pedir datos anonimizados
+
+Simular un dataset para la práctica (yo te lo puedo generar)
+
+✅ 3. Limpiar y preparar los datos (Preprocesamiento)
+
+En ML esta es la parte más importante.
+
+Para campos numéricos:
+
+Convertir fechas a variables como:
+
+días abiertos
+
+tiempo desde última actualización
+
+Normalizar si usarás redes neuronales
+
+Para campos categóricos:
+
+One-Hot Encoding
+
+Label Encoding
+
+Para texto:
+
+Tokenizar
+
+Limpiar stopwords
+
+Convertir a vectores:
+
+TF-IDF (más fácil)
+
+Word Embeddings
+
+BERT o modelos NLP modernos (nivel avanzado)
+
+✅ 4. Elegir el tipo de modelo predictivo
+
+Modelos recomendados:
+
+Modelo básico y muy efectivo:
+
+✔ Random Forest (ideal para datos mezclados numéricos + texto vectorizado)
+✔ Buena precisión
+✔ Fácil de entrenar
+
+Modelo intermedio:
+
+✔ XGBoost
+Muy usado en la industria, excelente rendimiento.
+
+Modelo avanzado (si quieres usar redes neuronales):
+
+✔ Red neuronal tipo MLP para datos estructurados
+✔ BERT o DistilBERT para texto
+✔ Combinación (modelo multimodal)
+
+✅ 5. Entrenamiento del modelo
+
+Tareas clave:
+
+Separar datos:
+
+70% entrenamiento
+
+15% validación
+
+15% prueba
+
+Ajustar hiperparámetros
+
+Entrenar varias versiones
+
+Elegir la mejor según métricas:
+
+Accuracy
+
+F1 Score
+
+Precision/Recall
+
+Matriz de confusión
+
+✅ 6. Evaluar resultados
+
+Responde preguntas como:
+
+¿Qué tan bien predice el modelo?
+
+¿Qué características pesan más? (Feature Importance)
+
+¿Qué tipo de incidencias predice mal?
+
+¿Es útil para priorización?
+
+✅ 7. Implementación del sistema
+
+Una vez listo el modelo:
+
+Crear un script en Python que reciba una incidencia nueva y devuelva la predicción.
+
+Hacer una API en Flask o FastAPI para integrarlo.
+
+(Opcional) Interfaz gráfica simple.
+
+✅ 8. Documentación final (lo que te pedirán en un proyecto académico)
+
+Tu reporte debe incluir:
+
+Descripción del problema
+
+Objetivo
+
+Dataset usado
+
+Preprocesamiento
+
+Modelos elegidos
+
+Entrenamiento
+
+Resultados y métricas
+
+Conclusiones
+
+Trabajo futuro
+
+Puedo ayudarte a redactarlo también.
+
+📌 Si quieres, puedo generarte:
+✔ El código completo en Python
+✔ El dataset simulado
+✔ La arquitectura del modelo
+✔ El documento académico listo para entregar
+
