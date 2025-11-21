@@ -1,192 +1,254 @@
-✅ 1. Entender claramente qué vas a predecir (lo primero y más importante)
+OBJETIVOS 
+Dar el costo de transporte 
+Dar el costo de gasolina 
+Dar el tiempo de entrega 
 
-Antes de hacer cualquier modelo, necesitas definir:
+Perfecto — voy a darte una guía completa y práctica (paso a paso) para construir una IA que presupuesté transporte para una empresa logística teniendo en cuenta valor de la gasolina, costo de transporte y tiempo de entrega. Incluyo: datos necesarios, fórmulas, esquema de pipeline, modelos sugeridos, ejemplos de código en Python (listos para correr), ideas de interfaz y mejoras futuras.
 
-¿Qué variable quieres predecir?
+1) Resumen del objetivo
 
-Algunas opciones comunes para incidencias de Jira:
+Crear un sistema que, dado un envío (origen, destino, peso/volumen, tipo de carga, fecha/hora, vehículo, etc.), devuelva:
 
-Tiempo de resolución (rápida / normal / lenta)
+Costo estimado (MXN / USD)
 
-Probabilidad de que escale (sí / no)
+Consumo de combustible estimado (litros y costo)
 
-Prioridad futura (alta / media / baja)
+Tiempo estimado de entrega (horas)
 
-Si se cerrará en los próximos X días
+Opcional: alternativas (ruta más barata vs ruta más rápida)
 
-Estado futuro (To Do, In Progress, Done, Blocked…)
+2) Datos mínimos que necesitas (columnas para tu dataset)
 
-📌 Elige solo UNA para este proyecto.
-Ejemplo recomendado para un proyecto académico:
-👉 Predecir si una incidencia se resolverá en menos de 7 días (sí/no)
+Recomendado guardar histórico de viajes; cada fila = 1 viaje:
 
-✅ 2. Obtener los datos
+id
 
-Necesitarás un dataset histórico de incidencias Jira.
-Las columnas útiles suelen ser:
+fecha_salida
 
-Campos estructurados
+origen (lat,long o código)
 
-Fecha de creación
+destino (lat,long o código)
 
-Fecha de resolución
+distancia_km
 
-Prioridad
+tiempo_real_horas
 
-Tipo (bug, task, incident, improvement…)
+velocidad_prom_kmh
 
-Asignado a
+tipo_camion (3.5t, 10t, trailer, etc.)
 
-Estado actual
+consumo_litros_por_km (o por 100 km)
 
-Etiquetas
+precio_gasolina_por_litro
 
-Campos de texto
+salario_conductor_por_hora
 
-Descripción
+peajes (MXN)
 
-Resumen ("summary")
+otros_costos (mant., seguros)
 
-Comentarios
+carga_kg o volumen_m3
 
-📌 Si no tienes datos reales, puedes:
+costo_total_real (lo cobrado/registrado)
 
-Exportar de un Jira local
+paradas (nº)
 
-Pedir datos anonimizados
+trafico_factor (si lo tienes)
 
-Simular un dataset para la práctica (yo te lo puedo generar)
+condicion_carretera (óptima/mala)
 
-✅ 3. Limpiar y preparar los datos (Preprocesamiento)
+3) Fórmulas básicas (determinísticas)
 
-En ML esta es la parte más importante.
+Estas fórmulas te sirven para un presupuesto rápido sin ML:
 
-Para campos numéricos:
+Consumo combustible (litros) = distancia_km * consumo_litros_por_km
 
-Convertir fechas a variables como:
+Costo combustible = consumo_litros * precio_gasolina_por_litro
 
-días abiertos
+Costo conductor = salario_conductor_por_hora * tiempo_estimado_horas
 
-tiempo desde última actualización
+Costo operativo = costo_combustible + costo_conductor + peajes + otros_costos
 
-Normalizar si usarás redes neuronales
+Markup / margen = Costo_operativo * (1 + margen) (ej. margen 0.15 = 15%)
 
-Para campos categóricos:
+Tiempo estimado = distancia_km / velocidad_prom_kmh * (1 + factor_trafico + factor_paradas)
 
-One-Hot Encoding
+4) Enfoque con IA / ML
 
-Label Encoding
+Usa ML para mejorar estimaciones basadas en histórico y variables externas (precio gasolina en fecha, tráfico, clima):
 
-Para texto:
+Problema 1 (regresión): Predecir costo_total → modelos: Regresión lineal, RandomForestRegressor, XGBoost/LightGBM
 
-Tokenizar
+Problema 2 (regresión): Predecir tiempo_real_horas → modelos: Regresión o series temporales si hay estacionalidad
 
-Limpiar stopwords
+Características (features): distancia, tipo_camion, carga_kg, precio_gasolina, hora_dia, dia_semana, peajes, condición carretera, número de paradas, histórico tráfico
 
-Convertir a vectores:
+Evaluación: MAE (error absoluto medio), RMSE, MAPE (porcentual)
 
-TF-IDF (más fácil)
+Ventaja: ML aprende efectos no lineales (por ejemplo, tráfico en lunes 8am aumenta tiempo un 40% y consumo por más paradas).
 
-Word Embeddings
+5) Pipeline recomendado (implementación)
 
-BERT o modelos NLP modernos (nivel avanzado)
+Recolecta datos históricos (CSV/DB).
 
-✅ 4. Elegir el tipo de modelo predictivo
+Preprocesamiento: limpiar, imputar, transformar categorías (one-hot), escalar si hace falta.
 
-Modelos recomendados:
+Feature engineering: añadir hora_dia, dia_semana, distancia/dist_max, peso/distancia.
 
-Modelo básico y muy efectivo:
+Entrenar varios modelos (lineal, RF, XGBoost).
 
-✔ Random Forest (ideal para datos mezclados numéricos + texto vectorizado)
-✔ Buena precisión
-✔ Fácil de entrenar
+Validación cruzada y selección por MAE.
 
-Modelo intermedio:
+Guardar modelo (pickle/joblib).
+
+Desplegar: API (Flask / FastAPI) o dashboard (Streamlit).
+
+Conectar a fuentes externas: precios gasolina diarios, tráfico en tiempo real (APIs).
+
+Monitor: compara predicciones vs real y reentrena periódicamente.
+
+6) Código de ejemplo completo (Python) — generación de datos sintéticos, entrenamiento y predicción
+
+Copia y pega en tu entorno; usa venv y pip install pandas scikit-learn xgboost si quieres XGBoost.
+
+# presupuesto_transporte.py
+import numpy as np
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_absolute_error
+import joblib
+
+# --- 1) Generar dataset sintético (ejemplo) ---
+np.random.seed(42)
+n = 1000
+distancia = np.random.uniform(5, 1200, n)          # km
+tipo_camion = np.random.choice(['3.5t','10t','20t','trailer'], n)
+carga_kg = np.random.uniform(100, 20000, n)
+precio_gas = np.random.uniform(18, 26, n)          # MXN / litro
+consumo_por_km_map = {'3.5t':0.12, '10t':0.22, '20t':0.35, 'trailer':0.6}
+consumo = np.array([consumo_por_km_map[t] for t in tipo_camion])
+# tiempo base (sin trafico)
+vel_prom = np.random.uniform(50, 90, n)            # km/h
+tiempo_h = distancia / vel_prom
+# tráfico + paradas
+factor_trafico = np.random.normal(1.0, 0.15, n).clip(0.7, 1.8)
+paradas = np.random.poisson(1.2, n)
+tiempo_real = tiempo_h * factor_trafico + paradas * 0.5
 
-✔ XGBoost
-Muy usado en la industria, excelente rendimiento.
+litros = distancia * consumo
+costo_combustible = litros * precio_gas
+salario_hora = np.where(tipo_camion=='trailer', 150, 100)  # MXN/h ejemplo
+costo_conductor = salario_hora * tiempo_real
+peajes = np.random.uniform(0, 1200, n)
+otros = np.random.uniform(0, 800, n)
 
-Modelo avanzado (si quieres usar redes neuronales):
+costo_total = costo_combustible + costo_conductor + peajes + otros
+# agrega algo de ruido
+costo_total = costo_total * np.random.normal(1.02, 0.05, n)
 
-✔ Red neuronal tipo MLP para datos estructurados
-✔ BERT o DistilBERT para texto
-✔ Combinación (modelo multimodal)
+df = pd.DataFrame({
+    'distancia': distancia,
+    'tipo_camion': tipo_camion,
+    'carga_kg': carga_kg,
+    'precio_gas': precio_gas,
+    'vel_prom': vel_prom,
+    'paradas': paradas,
+    'tiempo_real_h': tiempo_real,
+    'litros': litros,
+    'costo_combustible': costo_combustible,
+    'peajes': peajes,
+    'otros': otros,
+    'costo_total': costo_total
+})
 
-✅ 5. Entrenamiento del modelo
+# --- 2) Preprocesamiento simple ---
+df = pd.get_dummies(df, columns=['tipo_camion'], drop_first=True)
 
-Tareas clave:
+X = df.drop(columns=['costo_total', 'litros', 'costo_combustible', 'tiempo_real_h'])
+y = df['costo_total']
 
-Separar datos:
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-70% entrenamiento
+# --- 3) Entrenamiento: RandomForest ---
+model = RandomForestRegressor(n_estimators=200, random_state=42, n_jobs=-1)
+model.fit(X_train, y_train)
 
-15% validación
+# --- 4) Evaluación ---
+pred = model.predict(X_test)
+mae = mean_absolute_error(y_test, pred)
+print(f"MAE en test: {mae:.2f} (MXN)")
 
-15% prueba
+# --- 5) Guardar modelo ---
+joblib.dump(model, 'modelo_presupuesto_rf.joblib')
+print("Modelo guardado como modelo_presupuesto_rf.joblib")
 
-Ajustar hiperparámetros
+# --- 6) Ejemplo de predicción para un nuevo viaje ---
+nuevo = {
+    'distancia': 480,
+    'carga_kg': 3500,
+    'precio_gas': 22.5,
+    'vel_prom': 70,
+    'paradas': 1,
+    # columnas dummies (si usas las mismas columnas que X)
+    'tipo_camion_10t': 0,
+    'tipo_camion_20t': 0,
+    'tipo_camion_trailer': 1
+}
+# Asegúrate de mantener el orden de columnas
+Xcols = X.columns.tolist()
+nuevo_df = pd.DataFrame([nuevo], columns=Xcols).fillna(0)
+pred_nuevo = model.predict(nuevo_df)[0]
+print(f"Presupuesto estimado: {pred_nuevo:.2f} MXN")
 
-Entrenar varias versiones
+7) Cómo estimar tiempo de entrega (más preciso)
 
-Elegir la mejor según métricas:
+Base: distancia / vel_prom
 
-Accuracy
+Ajustar según:
 
-F1 Score
+hora_salida (pico vs valle)
 
-Precision/Recall
+dia_semana (festivos)
 
-Matriz de confusión
+condicion_carretera (obra, lluvia)
 
-✅ 6. Evaluar resultados
+paradas y tipo_carga (carga peligrosa → lentitud)
 
-Responde preguntas como:
+ML: entrenar un modelo con tiempo_real_h como target.
 
-¿Qué tan bien predice el modelo?
+8) Interfaz recomendada (rápida)
 
-¿Qué características pesan más? (Feature Importance)
+Streamlit: ideal para prototipar dashboards (input de origen,destino,distancia,camión → muestra presupuesto, gráfico de desglose).
 
-¿Qué tipo de incidencias predice mal?
+FastAPI + frontend: para producción (API REST que consume el modelo).
 
-¿Es útil para priorización?
+Integraciones útiles:
 
-✅ 7. Implementación del sistema
+API de tráfico (Google Maps, HERE) para tiempo real.
 
-Una vez listo el modelo:
+API precio gasolina (si existe local) o scrapping diario.
 
-Crear un script en Python que reciba una incidencia nueva y devuelva la predicción.
+Base de datos: PostgreSQL o BigQuery para historiales.
 
-Hacer una API en Flask o FastAPI para integrarlo.
+9) Mejores prácticas y mejoras
 
-(Opcional) Interfaz gráfica simple.
+Reentrenamiento automático semanal/quincenal.
 
-✅ 8. Documentación final (lo que te pedirán en un proyecto académico)
+Explainability: SHAP para explicar por qué se estimó un costo.
 
-Tu reporte debe incluir:
+Simulador de escenarios: variar precio gas, distancia, margen para ver impacto.
 
-Descripción del problema
+Optimización: si tienes múltiples rutas/vehículos, usar un optimización (OR-Tools) para asignar vehículos minimizando costo o tiempo.
 
-Objetivo
+Alertas/monitoring: si predicción difiere mucho del real, revisar datos.
 
-Dataset usado
+10) Propuesta rápida de MVP (mínimo viable) en 4 pasos
 
-Preprocesamiento
+Recolecta 3 meses de viajes (CSV).
 
-Modelos elegidos
+Implementa script determinístico (fórmulas de la sección 3) → ya te da presupuesto básico.
 
-Entrenamiento
+Entrena un RandomForest con tu histórico como en el ejemplo.
 
-Resultados y métricas
-
-Conclusiones
-
-Trabajo futuro
-
-Puedo ayudarte a redactarlo también.
-
-📌 Si quieres, puedo generarte:
-✔ El código completo en Python
-✔ El dataset simulado
-✔ La arquitectura del modelo
-✔ El documento académico listo para entregar
-
+Despliega con Streamlit para que el personal comercial genere cotizaciones.

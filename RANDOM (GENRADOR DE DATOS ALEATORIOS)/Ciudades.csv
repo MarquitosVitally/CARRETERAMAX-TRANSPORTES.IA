@@ -1,0 +1,151 @@
+id,ciudad,estado,latitud,longitud,distancia_km,tiempo_horas
+1,Monterrey,Nuevo León,25.6866,-100.3161,0.00,0.00
+2,Ciudad de México,Ciudad de México,19.4326,-99.1332,726.25,9.08
+3,Guadalajara,Jalisco,20.6597,-103.3496,808.18,10.10
+4,Puebla,Puebla,19.0414,-98.2063,707.31,8.84
+5,Tijuana,Baja California,32.5149,-117.0382,1557.27,19.47
+6,León,Guanajuato,21.1220,-101.6765,641.36,8.02
+7,Ciudad Juárez,Chihuahua,31.6904,-106.4245,930.02,11.62
+8,Querétaro,Querétaro,20.5888,-100.3899,631.47,7.89
+9,Culiacán,Sinaloa,24.8090,-107.3940,924.56,11.56
+10,Mérida,Yucatán,20.9674,-89.5926,1823.36,22.79
+11,San Luis Potosí,San Luis Potosí,22.1565,-100.9855,482.91,6.04
+12,Torreón,Coahuila,25.5143,-103.4170,360.51,4.51
+13,Hermosillo,Sonora,29.0729,-110.9559,1098.04,13.73
+14,Chihuahua,Chihuahua,28.6320,-106.0691,927.10,11.59
+15,Veracruz,Veracruz,19.1738,-96.1342,943.48,11.79
+16,Acapulco,Guerrero,16.8531,-99.8237,953.17,11.92
+17,Mazatlán,Sinaloa,23.2494,-106.4111,1026.11,12.83
+18,Toluca,Estado de México,19.2826,-99.6557,710.40,8.88
+19,Ciudad Victoria,Tamaulipas,23.7369,-99.1411,463.98,5.80
+20,Morelia,Michoacán,19.7008,-101.1849,791.26,9.89
+21,Saltillo,Coahuila,25.4232,-101.0058,277.86,3.47
+22,Querétaro,Querétaro (otro punto),20.5888,-100.3899,631.47,7.89
+23,Cuernavaca,Morelos,18.9202,-99.2216,789.09,9.86
+24,Durango,Durango,24.0277,-104.6532,825.33,10.32
+25,Tuxtla Gutiérrez,Chiapas,16.7540,-93.1150,1568.56,19.61
+26,Villahermosa,Tabasco,17.9892,-92.9471,1476.04,18.45
+27,Tepic,Nayarit,21.5067,-104.8955,869.05,10.86
+28,Zacatecas,Zacatecas,22.7709,-102.5831,618.66,7.73
+29,Celaya,Guanajuato,20.5269,-100.8151,656.91,8.21
+30,Gómez Palacio,Durango,25.5629,-103.4778,357.92,4.47
+31,Guadalupe,Nuevo León,25.6692,-100.2154,9.39,0.12
+32,Reynosa,Tamaulipas,26.0926,-98.2772,290.41,3.63
+33,Poza Rica,Veracruz,20.5335,-97.4603,1014.61,12.68
+34,Coatzacoalcos,Veracruz,18.1507,-94.4207,1145.95,14.32
+35,Salamanca,Guanajuato,21.0087,-101.2060,647.57,8.09
+36,Matamoros,Tamaulipas,25.8690,-97.5026,375.28,4.69
+37,Tapachula,Chiapas,14.9001,-92.2572,1753.19,21.91
+38,Tuxtla,Chiapas (otro punto),16.7540,-93.1150,1568.56,19.61
+39,Poza Rica de Hidalgo,Veracruz,20.5335,-97.4603,1014.61,12.68
+40,Orizaba,Veracruz,18.8530,-97.1065,1168.28,14.60
+41,Chilpancingo,Guerrero,17.5500,-99.5000,1004.64,12.56
+42,Cuautla,Morelos,18.8211,-99.2419,789.99,9.87
+43,La Paz,Baja California Sur,24.1426,-110.3107,1153.27,14.41
+44,Cancún,Quintana Roo,21.1619,-86.8515,1749.41,21.87
+45,San Luis Río Colorado,Sonora,32.4761,-114.7688,1484.25,18.55
+46,Celaya (otro),Guanajuato,20.5269,-100.8151,656.91,8.21
+47,Aguascalientes,Aguascalientes,21.8853,-102.2916,581.87,7.27
+48,Puerto Vallarta,Jalisco,20.6534,-105.2253,988.69,12.36
+49,Los Mochis,Sinaloa,25.7694,-109.0190,1096.14,13.70
+50,Tapachula (otro),Chiapas,14.9001,-92.2572,1753.19,21.91
+51,Chihuahua (otro),Chihuahua,28.6320,-106.0691,927.10,11.59
+52,Tuxtla Gutiérrez (otro punto),Chiapas,16.7540,-93.1150,1568.56,19.61
+53,Tulum,Quintana Roo,20.2110,-87.4654,1713.12,21.41
+54,Zihuatanejo,Guerrero,17.6379,-101.5481,1031.18,12.89
+55,Veracruz (otro),Veracruz,19.1738,-96.1342,943.48,11.79
+56,Chilpancingo (otro),Guerrero,17.5500,-99.5000,1004.64,12.56
+57,La Piedad,Michoacán,20.3483,-102.0298,713.15,8.91
+58,Guadalupe (Otro en Zacatecas),Zacatecas,22.7709,-102.5831,629.28,7.87
+59,Jiménez,Chihuahua,27.3064,-105.2108,865.11,10.81
+60,Reynosa (otro),Tamaulipas,26.0926,-98.2772,290.41,3.63
+61,San Juan del Río,Querétaro,20.3796,-100.0257,603.30,7.54
+62,Pachuca,Hidalgo,20.1012,-98.7629,692.21,8.65
+63,Nogales,Sonora,31.3206,-110.9306,1129.55,14.12
+64,Córdoba,Veracruz,18.8578,-96.9696,1141.05,14.26
+65,Tehuacán,Puebla,18.4603,-97.3833,983.34,12.29
+66,Zacatecas (another),Zacatecas,22.7709,-102.5831,618.66,7.73
+67,San Cristóbal de las Casas,Chiapas,16.7373,-92.6376,1503.27,18.79
+68,Oaxaca,Oaxaca,17.0732,-96.7266,1476.01,18.45
+69,Huauchinango,Puebla,20.1167,-98.2333,685.70,8.57
+70,Ciudad Madero,Tamaulipas,22.2740,-97.8493,310.97,3.89
+71,Colima,Colima,19.2433,-103.7240,907.65,11.35
+72,Campeche,Campeche,19.8516,-90.5299,1413.07,17.66
+73,Tuxtla (otra vez),Chiapas,16.7540,-93.1150,1568.56,19.61
+74,Autlán,Jalisco,19.8260,-104.3570,946.77,11.83
+75,Tampico,Tamaulipas,22.2559,-97.8553,295.38,3.69
+76,Cuernavaca (again),Morelos,18.9202,-99.2216,789.09,9.86
+77,Salina Cruz,Oaxaca,16.1664,-95.2023,1488.09,18.60
+78,Querétaro (other),Querétaro,20.5888,-100.3899,631.47,7.89
+79,Tuxtla Gutiérrez (again),Chiapas,16.7540,-93.1150,1568.56,19.61
+80,San Luís Potosí (other),San Luis Potosí,22.1565,-100.9855,482.91,6.04
+81,La Paz (other),Baja California Sur,24.1426,-110.3107,1153.27,14.41
+82,Tapachula (third),Chiapas,14.9001,-92.2572,1753.19,21.91
+83,Tepic (other),Nayarit,21.5067,-104.8955,869.05,10.86
+84,Durango (other),Durango,24.0277,-104.6532,825.33,10.32
+85,Guadalajara (other),Jalisco,20.6597,-103.3496,808.18,10.10
+86,Chihuahua (third),Chihuahua,28.6320,-106.0691,927.10,11.59
+87,Aguascalientes (other),Aguascalientes,21.8853,-102.2916,581.87,7.27
+88,Salamanca (other),Guanajuato,21.0087,-101.2060,647.57,8.09
+89,Veracruz (third),Veracruz,19.1738,-96.1342,943.48,11.79
+90,Morelia (other),Michoacán,19.7008,-101.1849,791.26,9.89
+91,Celaya (third),Guanajuato,20.5269,-100.8151,656.91,8.21
+92,Guadalupe, Zacatecas (other),Zacatecas,22.7709,-102.5831,629.28,7.87
+93,Reynosa (third),Tamaulipas,26.0926,-98.2772,290.41,3.63
+94,Chilpancingo (other),Guerrero,17.5500,-99.5000,1004.64,12.56
+95,Cuautla (other),Morelos,18.8211,-99.2419,789.99,9.87
+96,La Piedad (other),Michoacán,20.3483,-102.0298,713.15,8.91
+97,Oaxaca (other),Oaxaca,17.0732,-96.7266,1476.01,18.45
+98,San Cristóbal de las Casas (other),Chiapas,16.7373,-92.6376,1503.27,18.79
+99,Ciudad Madero (other),Tamaulipas,22.2740,-97.8493,310.97,3.89
+100,Tampico (other),Tamaulipas,22.2559,-97.8553,295.38,3.69
+101,Tuxpan,Veracruz,20.9340,-97.4016,999.68,12.50
+102,Chetumal,Quintana Roo,18.5030,-88.3056,1657.79,20.72
+103,Los Cabos,Baja California Sur,23.0623,-109.7022,1167.33,14.59
+104,Veracruz (otra vez),Veracruz,19.1738,-96.1342,943.48,11.79
+105,Zacapu,Michoacán,19.9694,-101.5511,757.40,9.47
+106,Irapuato,Guanajuato,21.1526,-101.7116,660.43,8.25
+107,Cuernavaca (tercera),Morelos,18.9202,-99.2216,789.09,9.86
+108,Coatzacoalcos (other),Veracruz,18.1507,-94.4207,1145.95,14.32
+109,Guadalupe (other New León),Nuevo León,25.6692,-100.2154,9.39,0.12
+110,Dolores Hidalgo,Guanajuato,21.1593,-100.9308,665.45,8.32
+111,Tapachula (cuarta),Chiapas,14.9001,-92.2572,1753.19,21.91
+112,Cabo San Lucas,Baja California Sur,22.8905,-109.9167,1174.13,14.68
+113,Minatitlán,Veracruz,18.1342,-94.4174,1169.14,14.61
+114,La Barca,Jalisco,20.3914,-102.7904,880.64,11.01
+115,Guadalajara (tercera),Jalisco,20.6597,-103.3496,808.18,10.10
+116,Durango (third),Durango,24.0277,-104.6532,825.33,10.32
+117,San Juan del Río (other),Querétaro,20.3796,-100.0257,603.30,7.54
+118,Morelia (third),Michoacán,19.7008,-101.1849,791.26,9.89
+119,Salamanca (third),Guanajuato,21.0087,-101.2060,647.57,8.09
+120,Chihuahua (fourth),Chihuahua,28.6320,-106.0691,927.10,11.59
+121,Ciudad Victoria (other),Tamaulipas,23.7369,-99.1411,463.98,5.80
+122,Saltillo (other),Coahuila,25.4232,-101.0058,277.86,3.47
+123,Zacatecas (fourth),Zacatecas,22.7709,-102.5831,618.66,7.73
+124,Guadalajara (cuarta),Jalisco,20.6597,-103.3496,808.18,10.10
+125,Querétaro (tercero),Querétaro,20.5888,-100.3899,631.47,7.89
+126,Tepic (tercero),Nayarit,21.5067,-104.8955,869.05,10.86
+127,Cuautla (third),Morelos,18.8211,-99.2419,789.99,9.87
+128,Cuernavaca (cuarta),Morelos,18.9202,-99.2216,789.09,9.86
+129,La Paz (third),Baja California Sur,24.1426,-110.3107,1153.27,14.41
+130,Tuxtla Gutiérrez (cuarta),Chiapas,16.7540,-93.1150,1568.56,19.61
+131,San Cristóbal de las Casas (segunda),Chiapas,16.7373,-92.6376,1503.27,18.79
+132,Tampico (cuarto),Tamaulipas,22.2559,-97.8553,295.38,3.69
+133,Orizaba (otra vez),Veracruz,18.8530,-97.1065,1168.28,14.60
+134,Morelia (cuarta),Michoacán,19.7008,-101.1849,791.26,9.89
+135,Acapulco (otro),Guerrero,16.8531,-99.8237,953.17,11.92
+136,Puerto Vallarta (otro),Jalisco,20.6534,-105.2253,988.69,12.36
+137,La Barca (otro),Jalisco,20.3914,-102.7904,880.64,11.01
+138,Los Cabos (otro),Baja California Sur,23.0623,-109.7022,1167.33,14.59
+139,Cabo San Lucas (otro),Baja California Sur,22.8905,-109.9167,1174.13,14.68
+140,Minatitlán (otro),Veracruz,18.1342,-94.4174,1169.14,14.61
+141,Dolores Hidalgo (otro),Guanajuato,21.1593,-100.9308,665.45,8.32
+142,San Juan del Río (cuarto),Querétaro,20.3796,-100.0257,603.30,7.54
+143,Tapachula (quinta),Chiapas,14.9001,-92.2572,1753.19,21.91
+144,Tuxtla (quinta),Chiapas,16.7540,-93.1150,1568.56,19.61
+145,Cuautla (cuarto),Morelos,18.8211,-99.2419,789.99,9.87
+146,Oaxaca (otra vez),Oaxaca,17.0732,-96.7266,1476.01,18.45
+147,Veracruz (cuarto),Veracruz,19.1738,-96.1342,943.48,11.79
+148,Colima (otro),Colima,19.2433,-103.7240,907.65,11.35
+149,Salina Cruz (otro),Oaxaca,16.1664,-95.2023,1488.09,18.60
+150,San Cristóbal (otro),Chiapas,16.7373,-92.6376,1503.27,18.79
